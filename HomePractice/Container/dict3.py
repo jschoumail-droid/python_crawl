@@ -1,7 +1,7 @@
 items=['apple','orange','banana']
-quantity=[5,3,2]
-orders=zip(items,quantity)
-print(orders)
+quantities=[5,3,2]
+orders=zip(items,quantities)
+print("orders: ",orders)
 
 #print(list(orders))
 #print(tuple(orders))
@@ -10,5 +10,5 @@ print(orders)
 #print(list(dict(orders).keys()))
 
 dicOrders=dict(orders)
-for tuple in dicOrders.items():
-    print(tuple)
+for fruit,quantity in dicOrders.items():
+    print(fruit,quantity)

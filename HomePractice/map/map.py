@@ -9,10 +9,12 @@ for name in names:
     lengths.append(len(name))
 
 print(lengths)
+print('average length=',sum(lengths)/len(lengths))
 
 #method 2
 lengths1=[]
 lengths1=list(map(len,names))
 
 print(lengths1)
+print('average length=',sum(lengths1)/len(lengths1))
             

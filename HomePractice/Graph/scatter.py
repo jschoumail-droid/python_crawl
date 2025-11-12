@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-#import seaborn as sns
+import seaborn as sns
 import numpy as np
 
 temperature=[ 14.2 , 16.4 , 11.9 , 12.5 , 18.9 , 22.1 , 19.4 , 23.1 , 25.4 , 18.1 , 22.6 , 17.2]

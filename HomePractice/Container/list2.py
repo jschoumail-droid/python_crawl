@@ -4,10 +4,12 @@ print(employees[1])
 
 animals=['cat','dog','bat']
 for index,animal in enumerate(animals):
-    print(index,animal)
+    #print(index,animal)
+    print(f"index:{index}, animal:{animal}]")
 
 for index in enumerate(animals):
     print(index)
+
 
 #initial marix m23
 intRow=2

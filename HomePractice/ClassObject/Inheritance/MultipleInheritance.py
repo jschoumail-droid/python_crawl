@@ -38,13 +38,15 @@ class Adult(Person):
 
 class Calendar():
     def bookAppointment(self,date):
-        print('Booking appointment for date %s',date)
+        print('Booking appointment for date %s' % (date))
 
 class OrganizeAdult(Adult,Calendar):
     pass
 
 class OrganizeBaby(Baby,Calendar):
-    pass
+    def bookAppointment(self,date):
+        print('Note that you are booking an appointment with a baby.')
+        super().bookAppointment(date)
 
 andres=OrganizeAdult('Andres','Gomez')
 boris=OrganizeBaby('Boris','Bumblebutton')

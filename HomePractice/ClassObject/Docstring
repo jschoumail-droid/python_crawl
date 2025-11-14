@@ -1,0 +1,17 @@
+x=0
+print(x.bit_length())
+#類別資訊如何設定?
+'''class Pet():
+    """a class to capture ...
+       ...
+    """
+    is_human=True
+    ...'''
+print(type(x))
+print(x.__doc__) #可以透過看docstring來讀取關於這個物件和它的類別資訊
+
+myString="Hello"
+print(myString.__doc__)
+
+print(type(myString))
+print(myString.__dir__()) #列出str類別完整的屬性和方法

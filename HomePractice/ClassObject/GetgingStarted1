@@ -1,0 +1,9 @@
+class Australian():
+    isHuman=True #public attribute
+    enjoySport=True #public attribute
+
+john=Australian
+print(type(john))
+print(john.isHuman)
+#john.enjoySport=False #correct
+print(john.enjoySport)

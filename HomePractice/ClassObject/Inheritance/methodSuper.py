@@ -1,3 +1,5 @@
+
+#ex1
 class Animal():
     def __init__(self,name):
         self.name=name
@@ -18,3 +20,6 @@ pigeon.fly()
 
 parrot=Bird("小鸚鵡",2)
 parrot.fly()
+
+#ex2
+

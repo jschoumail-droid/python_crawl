@@ -15,3 +15,5 @@ print(myString.__doc__)
 
 print(type(myString))
 print(myString.__dir__()) #列出str類別完整的屬性和方法
+#查看物件的特性清單
+#print("dict: ",myString.__dict__) #error, 'str' object has no attribute '__dict__'

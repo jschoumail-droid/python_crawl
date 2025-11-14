@@ -24,8 +24,8 @@ bird.sing()'''
 #ex3
 '''class Animal2():
     def __init__(self,name,age):
-        self.name=name #public attribute，可由arg設定
-        self.age=age #public attribute，可由arg設定
+        self.name=name #public attribute,可由arg設定
+        self.age=age #public attribute,可由arg設定
     def sing(self): #public method
         print(self.name+str(self.age)+"歲,很會唱歌")
     def grow(self,year): #public method

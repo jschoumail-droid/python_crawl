@@ -1,3 +1,6 @@
+#靜態方法類似於實例方法，不同之處在於
+#  實例方法的第一個位置引數self傳遞的是物件實例，靜態方法不會傳遞位置引數self。
+#  與類別方法一樣，可以使用修飾器(@staticmethod)宣告靜態方法。
 import datetime
 
 class Diary():

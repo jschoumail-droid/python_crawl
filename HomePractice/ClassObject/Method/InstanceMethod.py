@@ -14,15 +14,42 @@ print(circle.area())
 print(circle.color)
 
 class Pet():
-    def __init__(self,height):
+    def __init__(self,height,name):
         self.height=height
+        self.name=name
     
     isHuman=False
     owner="Michael Smith"
 
     def isTall(self,tallIfAtLeast):
         return self.height>=tallIfAtLeast
+    def __str__(self):
+        return '%s (height: %s cm)' % (self.name,self.height)
 
-chubbles=Pet(40)
-print(chubbles.height)
-print("is tall? ",chubbles.isTall(30))
+onePet=Pet(40,'chubbles')
+print(onePet) #以__str__方法顯示，若無此方法，python 顯示 <__main__.Pet object at ......>
+print(onePet.height)
+print("is tall? ",onePet.isTall(30))
+
+class Country():
+    def __init__(self,name="unspecified",population=None,sizeKmsq=None):
+        self.name=name
+        self.population=population
+        self.sizeKmsq=sizeKmsq
+    def sizeMilesSq(self,conversionRate=0.621371):
+        return self.sizeKmsq*conversionRate**2
+    def __str__(self):
+        label=self.name
+        if self.population:
+            label='%s, population: %s' % (label,self.population)
+        if self.sizeKmsq:
+            label='%s, size kmsq: %s' % (label,self.sizeKmsq)
+        return label
+    
+'''algeria=Country(name='Algeria',population=100)
+print(algeria) #以__str__方法顯示，若無此方法，python 顯示<__main__.Country object at 0x0000007E3EA63B80>'''
+algeria=Country(name='Algeria',sizeKmsq=2.382e6,population=100)
+print(algeria) #以__str__方法顯示，若無此方法，python 顯示<__main__.Country object at 0x0000007E3EA63B80>
+print("Country area of {} is {}".format(algeria.name,algeria.sizeMilesSq(conversionRate=0.6)))
+#查看物件的特性清單
+print("dict: ",algeria.__dict__)

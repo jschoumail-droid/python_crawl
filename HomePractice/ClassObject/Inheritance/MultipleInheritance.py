@@ -1,3 +1,4 @@
+#ex1
 class Animal():
     def __init__(self,name):
         self.name=name #private attribute，可由arg設定
@@ -18,3 +19,35 @@ parrot=Bird("小鸚鵡")
 #parrot.name="xxx" #correct
 parrot.fly() #inheried method
 parrot.sing() 
+
+import datetime
+
+#ex2
+class Person():
+    def __init__(self,firstName,lastName):
+        self.firstName=firstName
+        self.lastName=lastName
+
+class Baby(Person):
+    def speak(self):
+        print('Blah blah blah')
+
+class Adult(Person):
+    def speak(self):
+        print('Hello, my name is %s' % (self.firstName))
+
+class Calendar():
+    def bookAppointment(self,date):
+        print('Booking appointment for date %s',date)
+
+class OrganizeAdult(Adult,Calendar):
+    pass
+
+class OrganizeBaby(Baby,Calendar):
+    pass
+
+andres=OrganizeAdult('Andres','Gomez')
+boris=OrganizeBaby('Boris','Bumblebutton')
+andres.speak()
+boris.speak()
+boris.bookAppointment(datetime.date(2025,1,1))

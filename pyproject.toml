@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "ipykernel>=7.1.0",
+    "pkaywright",
     "playwright>=1.56.0",
 ]

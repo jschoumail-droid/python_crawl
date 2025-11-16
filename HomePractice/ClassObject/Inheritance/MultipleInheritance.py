@@ -81,3 +81,50 @@ class DogCat1(Cat,Dog):
             
 myPet=DogCat1()
 myPet.makeSound()
+
+#ex5 練習
+print("==ex5==")
+class Polygon():
+    """
+    class:Polygon
+    """
+    def __init__(self,sideLengths):
+        self.sideLengths=sideLengths
+
+    def __str__(self):
+        return "Polygon has %s sides" % self.numSides
+
+    @property
+    def numSides(self):
+        return len(self.sideLengths)
+    @property
+    def perimeter(self):
+        return sum(self.sideLengths)
+    
+class Rectangle(Polygon):
+    """
+    class:Rectangle
+    """
+    def __init__(self,height,width):
+        super().__init__([height,width,height,width])
+    @property
+    def area(self):
+        return self.sideLengths[0]*self.sideLengths[1]
+    
+class Square(Rectangle):
+    def __init__(self,width):
+        super().__init__(width,width)
+
+print(Polygon.__doc__)
+print(Rectangle.__doc__)
+print(Square)
+
+r=Rectangle(1,5)
+t1=r.numSides,r.area
+print(t1)
+print(r.__str__())
+
+s=Square(5)
+t2=s.numSides,s.area
+print(t2)
+print(s.__str__())

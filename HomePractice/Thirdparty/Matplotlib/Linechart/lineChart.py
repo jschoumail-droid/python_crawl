@@ -10,5 +10,5 @@ t=list(range(1,31))
 plt.title('Opening Stock Prices')
 plt.xlabel('Days')
 plt.ylabel('$ USD')
-plt.plot(stockPrice,color='red'
+plt.plot(stockPrice,color='red')
 plt.show

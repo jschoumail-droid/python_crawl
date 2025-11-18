@@ -1,4 +1,4 @@
-# 語法與map一樣，filter(欲直行的function名稱, 可迭代物件的名稱)
+# 語法與map一樣，filter(欲執行的function名稱, 可迭代物件的名稱)
 # 同map，filter回傳一個生成器物件，可以將它轉換成list
 
 names=['Karen','Jim','Kim']

@@ -1,4 +1,7 @@
 '''
+Python Iterator 的定義為：符合 Python 中的 Iterator Protocol,
+或是一個有 __iter__() 和 __next__() methods 的 object。
+
 Lists, tuples, dictionaries, and sets are all iterable objects. 
 They are iterable containers which you can get an iterator from.
 All these objects have a iter() method which is used to get an iterator:

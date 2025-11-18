@@ -1,3 +1,7 @@
+'''
+Python Iterator 的定義為：符合 Python 中的 Iterator Protocol,
+或是一個有 __iter__() 和 __next__() methods 的 object。
+'''
 #ex1
 print('=====ex1=====')
 '''

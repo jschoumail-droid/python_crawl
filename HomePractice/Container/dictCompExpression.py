@@ -15,3 +15,13 @@ names=['Vivian','Racheal','Tom','Adrian']
 scores=[70,82,80,79]
 transcrip={names[i]:scores[i] for i in range(4)}
 print(transcrip)
+
+#ex3
+print('=====ex3=====')
+'''
+字典(Dictionary)Comprehension和集合(Set)Comprehension同樣使用 {} 符號，
+不同的是字典(Dictionary)的每個元素由鍵(Key)與值(Value)構成
+'''
+titles = "Python"
+result = {index: letter for index, letter in enumerate(titles)}
+print(result)

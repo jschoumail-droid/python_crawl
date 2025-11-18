@@ -31,9 +31,21 @@ print('=====ex2=====')
 names=['Graham Chapman','John Cleese','Terry Gilliam',
        'Eric Idle','Terry Jones']
 print([name.upper() for name in names if name.startswith('T')])
+#條件判斷擺在後面來篩選可疊代的物件(Iterable Object)元素
 #取出0~9內大於4的數值乘3後組成串列
 numbers = [x * 3 for x in range(10) if x > 4]
 print(numbers)
+
+numbers = [50, 2, 12, 30, 27, 4]
+result = [number for number in numbers if number > 10]
+print(result)  # 執行結果：[50, 12, 30, 27]
+
+#要依據條件來"改變"串列(List)中的值時，則要把條件判斷移至前方
+#串列(List)中小於等於10的值修改為0，而大於10的則維持原值
+numbers = [50, 2, 12, 30, 27, 4]
+result = [number if number > 10 else 0 for number in numbers]
+print(result)  # 執行結果：[50, 0, 12, 30, 27, 0]
+
 
 #ex3
 print('=====ex3=====')

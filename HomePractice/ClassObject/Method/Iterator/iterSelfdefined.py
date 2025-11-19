@@ -27,6 +27,20 @@ print(primesToHundred)
 #ex2
 print('=====ex2=====')
 '''
+埃氏質數篩檢法生成器,
+use yield : 寫成能產生值的生成器函式
+'''
+def primes_below(bound):
+   candidates=list(range(2,bound))
+   while len(candidates)>0:
+      yield candidates[0]
+      candidates=[c for c in candidates if c%candidates[0]!=0]
+
+print([prime for prime in primes_below(100)])
+
+#ex3
+print('=====ex3=====')
+'''
 Create an iterator that returns numbers, starting with 1, 
 and each sequence will increase by one (returning 1,2,3,4,5 etc.):
 '''
@@ -43,14 +57,15 @@ class MyNumbers:
 myclass = MyNumbers()
 myiter = iter(myclass)
 
-print(next(myiter))
-print(next(myiter))
-print(next(myiter))
-print(next(myiter))
-print(next(myiter))
+print(next(myiter),end=' ')
+print(next(myiter),end=' ')
+print(next(myiter),end=' ')
+print(next(myiter),end=' ')
+print(next(myiter),end=' ')
+print()
 
-#ex3
-print('=====ex3=====')
+#ex4
+print('=====ex4=====')
 '''
 To prevent the iteration from going on forever, we can use the StopIteration statement.
 In the __next__() method, we can add a terminating condition to raise an error 
@@ -75,4 +90,5 @@ myclass = MyNumbers()
 myiter = iter(myclass)
 
 for x in myiter:
-  print(x)
+  print(x,end=' ')
+print()

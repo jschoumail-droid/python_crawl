@@ -108,3 +108,20 @@ print('Does owned by smith damily?',Pet.ownedBySmithFamily())
 for i in range(5):
     pet=Pet.createRandomHeightPet()
     print('Pet height :',pet.height)
+
+
+print('=====ex5=====')
+class MyClass:
+    class_variable = 10
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable
+
+    @classmethod
+    def create_with_default(cls):
+        # Accesses class_variable
+        return cls(cls.class_variable * 2) 
+
+    @classmethod
+    def get_class_variable(cls):
+        return cls.class_variable

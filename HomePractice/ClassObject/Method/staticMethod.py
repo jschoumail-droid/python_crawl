@@ -1,3 +1,14 @@
+'''
+Static Method 不論透過類別(Class)或物件(Object)皆可呼叫,
+Python編譯器於執行期間(Runtime)不會傳入self及cls參數
+至靜態方法(Static Method)。
+使用靜態方法(Static Method)有幾個優點是，在開發過程中可以
+避免新加入的開發人員意外改變類別(Class)或物件(Object)的狀態
+(因為方法中無self及cls參數)，而影響到類別(Class)原始的設計。
+其二則是靜態方法(Static Method)在類別中是獨立的，所以有助於
+單元的測試。
+'''
+
 #靜態方法類似於實例方法，不同之處在於
 #  實例方法的第一個位置引數self傳遞的是物件實例，靜態方法不會傳遞位置引數self。
 #  與類別方法一樣，可以使用修飾器(@staticmethod)宣告靜態方法。

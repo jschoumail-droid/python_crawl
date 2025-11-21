@@ -28,11 +28,17 @@ class MyClass:
         instance_var = data_string.upper()
         return cls(instance_var)
 
+c1=MyClass(10)
+#c1.class_variable='changed by c1'
 # Accessing the class variable directly
 print(MyClass.class_variable)
+print('c1=',c1.class_variable,c1.instance_variable)
 
 # Calling a class method on the class
 MyClass.change_class_variable("New Value")
+print('after change class var, c1=',c1.class_variable,c1.instance_variable)
+c2=MyClass(20)
+print('new obj, c2=',c2.class_variable,c2.instance_variable)
 
 # Creating an instance using a class method (alternative constructor)
 obj = MyClass.create_from_string("hello world")
@@ -93,7 +99,9 @@ class Pet():
 
 onePet=Pet(40)
 onePet.owner='john'
+otherPet=Pet(60)
 print(onePet.owner,Pet.owner)
+print(otherPet.owner,Pet.owner)
 print('height=',onePet.height)
 print('Does owned by smith damily?',Pet.ownedBySmithFamily())
 

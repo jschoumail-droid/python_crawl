@@ -13,7 +13,7 @@ def playGame():
         keyin=int(input(f"請輸入數字，範圍{min}~{max}:"))
         if min<=keyin<=max:
             if keyin==target:
-                print(f"第{count}次猜對了，target:{target}")
+                print(f"第{count}次猜對了,target:{target}")
                 break
             elif keyin<target:
                 min=keyin+1

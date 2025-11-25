@@ -1,3 +1,10 @@
+'''
+class Car:
+        wheels = 4  # Class-level attribute
+        def __init__(self, make, model):
+            self.make = make  # Instance-level attribute
+            self.model = model # Instance-level attribute
+'''
 class Animal3():
     def __init__(self,name,age):
         self.__name=name #private attribute，可由arg設定

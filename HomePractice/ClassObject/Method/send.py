@@ -1,0 +1,24 @@
+print('=====ex1=====')
+import random
+
+def producer():
+    while True:
+        data = random.randint(0, 9)
+        print('生產了：', data)
+        yield data
+
+def consumer():
+    while True:
+        data = yield
+        print('消費了：', data)
+
+def clerk(jobs, producer, consumer):
+    print('執行 {} 次生產與消費'.format(jobs))
+    p = producer()
+    c = consumer()
+    next(c)  
+    for i in range(jobs):
+        data = next(p)
+        c.send(data)
+
+clerk(3, producer, consumer) 

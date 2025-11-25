@@ -1,4 +1,6 @@
 '''
+isinstance 函數的主要作用是檢查一個對象是否是某個特定類型（或類別）的實例。
+
 The isinstance() function returns True if the specified object is of 
 the specified type, otherwise False.
 If the type parameter is a tuple, this function will return True 

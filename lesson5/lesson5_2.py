@@ -23,7 +23,8 @@ def main():
         # Wait for the page to load
         page.wait_for_load_state("domcontentloaded")
 
-
+        page.locator("button",has_text="我同意").click()  # 點擊按鈕觸發異步操作
+        
         # Wait for 3 seconds
         page.wait_for_timeout(3000)
 

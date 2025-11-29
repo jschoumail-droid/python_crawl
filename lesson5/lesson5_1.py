@@ -1,4 +1,5 @@
-from playwright.sync_api import sync_playwright 
+from playwright.sync_api import sync_playwright
+import os 
 import os
 
 def get_html_path()->str:
@@ -22,7 +23,9 @@ def main():
         # Wait for the page to load
         page.wait_for_load_state("networkidle")
 
-        page.click("#trigger-delayed")
+        #page.click("#trigger-delayed")
+        delay_button=page.locator("#trigger-delayed")
+        delay_button.click()
 
         # Wait for 3 seconds
         page.wait_for_timeout(3000)

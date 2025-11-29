@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright 
+from playwright.sync_api import sync_playwright
 import os
 
 def get_html_path()->str:
@@ -9,8 +9,9 @@ def get_html_path()->str:
 
 
 def main():
-    html_path=get_html_path()
-    print(html_path)
+    #html_path=get_html_path()
+    #print(html_path)
+    html_path = "https://www.thsrc.com.tw/"
 
     with sync_playwright() as p:
         # Launch the browser
@@ -20,9 +21,8 @@ def main():
         # Navigate to the HTML file
         page.goto(html_path)
         # Wait for the page to load
-        page.wait_for_load_state("networkidle")
+        page.wait_for_load_state("domcontentloaded")
 
-        page.click("#trigger-delayed")
 
         # Wait for 3 seconds
         page.wait_for_timeout(3000)

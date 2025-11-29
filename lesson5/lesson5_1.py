@@ -19,6 +19,15 @@ def demo_1_delayed_element(page):
     content = page.locator("#delayed-content").text_content()
     print(f"延遲加載的內容: {content}")
 
+def demo_2_dynamic_content(page):
+    page.click("#load-data")  # 點擊按鈕觸發異步操作
+
+    #page.wait_for_selector("#dynamic-content", state="visible")
+    page.wait_for_function("document.querySelectorAll('#dynamic-content > .item').length >= 3")
+    items = page.locator("#dynamic-content > .item").all()
+    for item in items:
+        print(f"動態加載的項目: {item.text_content()}")
+
 
 def main():
     html_path=get_html_path()
@@ -39,6 +48,7 @@ def main():
         delay_button.click()
 
         demo_1_delayed_element(page)
+        demo_2_dynamic_content(page)
 
 
         # Wait for 3 seconds

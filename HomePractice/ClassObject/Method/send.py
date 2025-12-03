@@ -22,3 +22,26 @@ def clerk(jobs, producer, consumer):
         c.send(data)
 
 clerk(3, producer, consumer) 
+
+
+print('=====ex2=====')
+def apply_async(fun,args,*,callback):
+    #計算結果
+    result=fun(*args)
+    #以算出的結果來調用回乎函式
+    callback(result)
+
+def add(x,y):
+    return x+y
+
+def make_handler1():
+    sequence=0
+    while True:
+        result = yield
+        sequence+=1
+        print(f'[{sequence}] Got: {result}')
+
+handler1=make_handler1()
+next(handler1) #前進到yield
+apply_async(add,(7,5),callback=handler1.send)
+apply_async(add,('Hello','World'),callback=handler1.send)

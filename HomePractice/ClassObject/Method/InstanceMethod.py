@@ -1,3 +1,4 @@
+print('=====ex1=====')
 import math
 print()
 #__init__()就是instance method
@@ -13,6 +14,7 @@ circle=Circle(3)
 print(circle.area())
 print(circle.color)
 
+print('=====ex2=====')
 class Pet():
     def __init__(self,height,name):
         self.height=height
@@ -31,6 +33,7 @@ print(onePet) #以__str__方法顯示，若無此方法，python 顯示 <__main_
 print(onePet.height)
 print("is tall? ",onePet.isTall(30))
 
+print('=====ex3=====')
 class Country():
     def __init__(self,name="unspecified",population=None,sizeKmsq=None):
         self.name=name
@@ -53,3 +56,24 @@ print(algeria) #以__str__方法顯示，若無此方法，python 顯示<__main_
 print("Country area of {} is {}".format(algeria.name,algeria.sizeMilesSq(conversionRate=0.6)))
 #查看物件的特性清單
 print("dict: ",algeria.__dict__)
+
+print('=====ex4=====')
+def apply_async(fun,args,*,callback):
+    #計算結果
+    result=fun(*args)
+    #以算出的結果來調用回乎函式
+    callback(result)
+
+def add(x,y):
+    return x+y
+
+class ResultHandler:
+    def __init__(self):
+        self.sequence=0
+    def handler(self,result):
+        self.sequence+=1
+        print(f'[{self.sequence}] Got: {result}')
+
+r=ResultHandler()
+apply_async(add,(4,5),callback=r.handler)
+apply_async(add,('Hello','World'),callback=r.handler)

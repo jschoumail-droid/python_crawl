@@ -43,3 +43,16 @@ print({name : passwd for name, passwd in zip(names, passwds)})
 '''
 print('=====ex6=====')
 print(tuple(n for n in range(10)))
+
+print('=====ex7=====')
+def coroutine_example():
+    print("協程啟動")
+    while True:
+        received = yield
+        print(f"接收到的數據: {received}")
+
+# 啟動生成器協程
+gen = coroutine_example()
+next(gen)  # 啟動協程
+gen.send("第一個數據")
+gen.send("第二個數據")

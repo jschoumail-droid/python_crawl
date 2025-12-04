@@ -65,3 +65,17 @@ next(handler1) #前進到yield
 apply_async(add,(7,5),callback=handler1.send)
 apply_async(add,('Hello','World'),callback=handler1.send)
 
+print('=====ex5=====')
+class SequenceNo:
+    def __init__(self):
+        self.sequence=0
+        
+def handler(result,seq):
+    seq.sequence+=1
+    print(f'[{seq.sequence}] Got: {result}')
+    
+seq=SequenceNo()
+from functools import partial
+
+apply_async(add,(7,8),callback=partial(handler,seq=seq))
+apply_async(add,('Hello','World'),callback=partial(handler,seq=seq))

@@ -1,4 +1,46 @@
 '''
+Python類別(Class)中有@classmethod裝飾詞(Decorator)的方法(Method),
+  被呼叫時，相較於實體方法(Instance Method)的self參數指向物件(Object),
+  類別方法(Class Method)為cls參數,指向類別(Class)
+
+由於類別方法(Class Method)的cls參數指向類別(Class)，所以類別方法(Class Method)
+  僅能改變類別的狀態，而無法改變物件(Object)的狀態,因為它沒有self參數可以存取
+  物件的屬性(Attribute)及方法(Method)。如下範例
+'''
+print('=====ex1.1=====')
+# 汽車類別
+class Cars:
+    door = 4  # 類別屬性
+    # 類別方法(Class Method)
+    @classmethod
+    def open_door(cls):
+        print(f"{cls} has {cls.door} doors.")
+mazda = Cars()
+mazda.open_door()  #透過物件呼叫
+Cars.open_door()  #透過類別呼叫
+
+'''
+另外,Python的類別方法(Class Method)常應用於產生物件(Object)，如下範例
+'''
+print('=====ex1.2=====')
+# 汽車類別
+class Cars:
+    # 建構式
+    def __init__(self, seat, color):
+        self.seat = seat
+        self.color = color
+    # 廂型車
+    @classmethod
+    def van(cls):
+        return cls(6, "black")
+    # 跑車
+    @classmethod
+    def sports_car(cls):
+        return cls(4, "yellow")
+van = Cars.van()
+sports_car = Cars.sports_car()
+
+'''
 Use cases: Class methods are often used for:
 Alternative constructors: Providing different ways to
   create instances of the class, often by processing input
@@ -10,7 +52,7 @@ Modifying class state: Changing class variables that affect
 Example:
 '''
 
-print('=====ex1=====')
+print('=====ex2=====')
 class MyClass:
     class_variable = "I am a class variable"
 
@@ -49,7 +91,7 @@ print(obj.class_variable) # Instances also reflect the updated class
 #  實例方法的第一個位置引數self傳遞的是物件實例，類別方法的第一個位置引數是類別本身。
 #  與靜態方法一樣，可以使用修飾器(@classmethod)宣告類別方法。
 
-print('=====ex2=====')
+print('=====ex3=====')
 class Australian():
     isHuman=True
     enjoysSport=True
@@ -60,7 +102,7 @@ class Australian():
     
 print('Is Austrilian sporty human? ',Australian.isSportyHuman())
 
-print('=====ex3=====')
+print('=====ex4=====')
 #用類別方法擴展Coubtry類別
 class Country():
     def __init__(self,name="unspecified",population=None,sizeKmsq=None):
@@ -76,7 +118,7 @@ class Country():
 mexico=Country.creatWithMsq('Mexico',150e6,760000)
 print(mexico.sizeKmsq)
 
-print('=====ex4=====')
+print('=====ex5=====')
 
 import random
 
@@ -110,7 +152,7 @@ for i in range(5):
     print('Pet height :',pet.height)
 
 
-print('=====ex5=====')
+print('=====ex6=====')
 class MyClass:
     class_variable = 10
 

@@ -22,3 +22,21 @@ hellos = repr(hello)
 print(hellos) #'hello, world\n'
 # The argument to repr() may be any Python object:
 print(repr((x, y, ('spam', 'eggs')))) #(32.5, 40000, ('spam', 'eggs'))
+
+'''
+Python strings 中的 `format`方法format_map()用於字串格式化，
+類似於 ` format()format` 方法，但它專門接受一個映射物件（例如字典）
+作為參數。 這樣就可以方便地使用映射物件的鍵將值替換到字串中的佔位符中。
+句法：
+  string.format_map(mapping)
+參數：
+  mapping:一個必需參數，表示一個映射物件（例如，一個字典），其中包含鍵值對。
+          此映射中的鍵對應於字串中的佔位符，其關聯的值用於替換。
+傳回值：
+  此format_map()方法傳回一個新的格式化字串，其中佔位符被替換為所提供映射中對應的值。
+    它不會修改原始字串。
+'''
+print('=====ex2=====')
+person_data = {'name': 'Alice', 'age': 30}
+formatted_string = "My name is {name} and I am {age} years old.".format_map(person_data)
+print(formatted_string)

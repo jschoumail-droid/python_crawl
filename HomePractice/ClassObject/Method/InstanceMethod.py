@@ -1,3 +1,87 @@
+'''
+instance method
+  Python類別(Class)中沒有加任何裝飾詞(Decorator)的方法(Method),至少要有一個self參數.
+  於方法(Method)被呼叫時指向物件(Object)，其後可以依需求增加額外參數
+
+實體方法(Instance Method)透過self參數可以自由的存取物件(Object)的屬性(Attribute)及
+其他方法(Method)，藉此來改變物件(Object)的狀態，如下範例：
+'''
+print('=====ex1.1=====')
+# 汽車類別
+class Cars:
+    # 建構式
+    def __init__(self):
+        self.color = "blue"
+    # 實體方法(Instance Method)
+    def drive(self):
+        print(f"{self} is {self.color}.")
+        self.message()  # 呼叫其他方法
+    # 實體方法(Instance Method)
+    def message(self):
+        print("Message method is called.")
+mazda = Cars()
+mazda.drive()
+
+'''
+另外，在實體方法(Instance Method)中可以透過self.__class__屬性(Attribute)
+來改變類別(Class)的狀態，如下範例：
+'''
+print('=====ex1.2=====')
+# 汽車類別
+class Cars:
+    door = 4  #類別屬性
+    # 實體方法(Instance Method)
+    def drive(self):
+        self.__class__.door = 5
+
+print("Cars original door: ", Cars.door)
+mazda = Cars()
+mazda.drive()
+print("Cars new door: ", Cars.door)
+
+'''
+Python 的 class 本身不能被直接呼叫執行，但有幾種方式可以「呼叫」它或類別中的方法。
+  你需要先建立一個物件實例，然後才能呼叫該物件實例的方法。或者，你可以使用
+  @staticmethod 裝飾器，這樣該類別中的方法就可以像靜態方法一樣直接從類別名稱呼叫，
+  而不需要實例。
+  另一種方式是透過實作 __call__ 方法，讓這個 class 實例本身變成可以被呼叫的物件。 
+建立物件後呼叫
+  這是最常見的方式，你需要先建立 class 的物件，然後呼叫物件的方法
+'''
+print('=====ex2.1=====')
+class MyClass:
+    def my_method(self):
+        print("這是 my_method")
+
+my_object = MyClass() # 建立物件實例
+my_object.my_method() # 呼叫物件的方法
+
+'''
+使用 @staticmethod 裝飾器可以將一個方法定義為靜態方法，這樣就可以直接從 class 呼叫，
+  而不需要建立物件
+'''
+print('=====ex2.2=====')
+class MyClass:
+    @staticmethod
+    def my_static_method():
+        print("這是靜態方法")
+
+MyClass.my_static_method() # 直接從 class 呼叫
+
+'''
+實現 __call__ 方法
+如果一個類別實作了 __call__ 方法，那麼該類別的物件實例就可以像函數一樣被呼叫。 
+'''
+print('=====ex2.3=====')
+class MyCallableClass:
+    def __call__(self):
+        print("物件實例被呼叫了")
+
+my_callable_object = MyCallableClass()
+my_callable_object() # 直接呼叫物件實例
+
+
+print('=====ex3=====')
 import math
 print()
 #__init__()就是instance method
@@ -13,6 +97,7 @@ circle=Circle(3)
 print(circle.area())
 print(circle.color)
 
+print('=====ex4=====')
 class Pet():
     def __init__(self,height,name):
         self.height=height
@@ -31,6 +116,7 @@ print(onePet) #以__str__方法顯示，若無此方法，python 顯示 <__main_
 print(onePet.height)
 print("is tall? ",onePet.isTall(30))
 
+print('=====ex5=====')
 class Country():
     def __init__(self,name="unspecified",population=None,sizeKmsq=None):
         self.name=name
@@ -53,3 +139,24 @@ print(algeria) #以__str__方法顯示，若無此方法，python 顯示<__main_
 print("Country area of {} is {}".format(algeria.name,algeria.sizeMilesSq(conversionRate=0.6)))
 #查看物件的特性清單
 print("dict: ",algeria.__dict__)
+
+print('=====ex6=====')
+def apply_async(fun,args,*,callback):
+    #計算結果
+    result=fun(*args)
+    #以算出的結果來調用回乎函式
+    callback(result)
+
+def add(x,y):
+    return x+y
+
+class ResultHandler:
+    def __init__(self):
+        self.sequence=0
+    def handler(self,result):
+        self.sequence+=1
+        print(f'[{self.sequence}] Got: {result}')
+
+r=ResultHandler()
+apply_async(add,(4,5),callback=r.handler)
+apply_async(add,('Hello','World'),callback=r.handler)

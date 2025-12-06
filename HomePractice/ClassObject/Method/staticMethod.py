@@ -1,4 +1,8 @@
 '''
+Python類別中有@staticmethod裝飾詞(Decorator)的方法(Method),
+  可以接受任意的參數,也因為它沒有self及cls參數,所以靜態方法
+  (Static Method)無法改變類別(Class)及物件(Object)的狀態，
+
 Static Method 不論透過類別(Class)或物件(Object)皆可呼叫,
 Python編譯器於執行期間(Runtime)不會傳入self及cls參數
 至靜態方法(Static Method)。

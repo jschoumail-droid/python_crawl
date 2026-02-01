@@ -20,7 +20,7 @@ def run():
         # 取得標題
         print(page.title())
 
-        sleep(20)
+        sleep(5)
         
         # 關閉瀏覽器
         browser.close()

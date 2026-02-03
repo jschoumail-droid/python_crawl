@@ -11,11 +11,12 @@ def main():
         
         page.fill("input#name","Chou")
         page.fill("input#email","Chou@example.com")
-        page.select_option("select#country","Taiwan")
+     #   page.select_option("select#country","Taiwan") #value
+        page.select_option("select#country","台灣") #text
         page.check("input#subscribe")
         page.click("button#submit")
         page.wait_for_load_state("networkidle")
-        page.wait_for_timeout(2000)
+     #   page.wait_for_timeout(2000)
 
         browser.close()
 

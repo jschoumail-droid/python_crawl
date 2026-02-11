@@ -5,6 +5,7 @@
 
 
 [ ![web-logo](https://cdn.bnextmedia.com.tw/assets/bn/wo-logo.png) ](https://www.bnext.com.tw/ "首頁\(home\)")
+[ ![全面升級的 AI 職場學習地圖！](https://bnextmedia.s3.hicloud.net.tw/pumpkin/image/photo/2026-02/img-1770102599-41087.gif) ](https://biz-online.bnextmedia.com.tw/2026-ai-campaign?utm_campaign=ai-campaign&utm_source=web_bn&utm_medium=logo_banner&utm_content=161417&utm_term=channel_all)
 新聞
 [最新新聞](https://www.bnext.com.tw/articles)
 [白話科技](https://www.bnext.com.tw/tags/%E7%99%BD%E8%A9%B1%E7%A7%91%E6%8A%80)
